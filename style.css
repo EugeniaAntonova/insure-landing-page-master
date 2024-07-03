@@ -80,6 +80,8 @@ img {
 .link {
     text-decoration: none;
     color: inherit;
+    outline-offset: 4px;
+    transition: .3s ease-in-out;
 }
 
 .button {
@@ -94,6 +96,7 @@ img {
     text-transform: uppercase;
     border: 2px solid var(--basic);
     color: var(--basic);
+    transition: .3s ease-in-out
 }
 
 .button--dark {
@@ -101,7 +104,24 @@ img {
     border-color: var(--accent);
 }
 
+@media (hover: hover) {
+    .button:is(:hover, :focus-visible) {
+        background-color: var(--basic);
+        color: var(--accent);
+    }
+}
+
+.button:active {
+    background-color: var(--basic);
+    color: var(--accent);
+}
+
 /* header */
+
+.logo {
+    width: fit-content;
+    outline-offset: 4px;
+}
 
 .burger {
     width: 32px;
@@ -161,8 +181,17 @@ img {
     font-weight: 700;
 }
 
+.header menu .link:active {
+    color: var(--text);
+}
+
 .header menu .button {
     width: 100%;
+}
+
+.header menu .button:active {
+    background: var(--basic);
+    color: var(--accent);
 }
 
 @keyframes in {
@@ -461,8 +490,31 @@ hr {
         color: var(--text);
     }
 
+    @media (hover: hover) {
+        .header menu .link:is(:hover, :focus-visible) {
+            color: var(--accent);
+        }
+    }
+
+    .header menu .link:active {
+        color: var(--accent);
+    }
+
     .header menu .button {
         width: fit-content;
+    }
+
+    @media (hover: hover) {
+
+        .header menu .button:is(:hover, :focus-visible) {
+            background: var(--accent);
+            color: var(--basic);
+        }
+    }
+
+    .header menu .button:active {
+        background: var(--accent);
+        color: var(--basic);
     }
 
     .header nav .button {
@@ -634,7 +686,7 @@ hr {
         grid-area: 2/3/4/-2;
     }
 
-    
+
     .more {
         padding: 70px 80px;
         grid-template-columns: 1fr auto;
