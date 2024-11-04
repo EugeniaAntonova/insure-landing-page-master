@@ -411,6 +411,19 @@ img {
     display: block;
 }
 
+.social a path {
+    transition: fill .3s ease-in-out;
+}
+@media (hover: hover) {
+    .social a:is(:hover, :focus-visible) path {
+        fill: var(--accent);
+    }
+}
+
+.social a:active path {
+    fill: var(--accent);
+}
+
 hr {
     width: 100%;
     margin: 0;
@@ -447,7 +460,7 @@ hr {
     display: block;
     color: var(--accent);
     font-weight: 700;
-    transition: .3 ease-in-out;
+    transition: .3s ease-in-out;
 }
 
 
